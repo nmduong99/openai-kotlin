@@ -12,7 +12,7 @@ public class ModerationRequest(
     /**
      * The input text to classify.
      */
-    @SerialName("input") public val input: List<String>,
+    @SerialName("input") public val input: List<String>? = null,
 
     /**
      * Moderation model.

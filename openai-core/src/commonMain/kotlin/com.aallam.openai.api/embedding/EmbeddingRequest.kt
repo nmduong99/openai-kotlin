@@ -24,7 +24,7 @@ public class EmbeddingRequest(
      * Unless you are embedding code, we suggest replacing newlines (`\n`) in your input with a single space, as we have
      * observed inferior results when newlines are present.
      */
-    @SerialName("input") public val input: List<String>,
+    @SerialName("input") public val input: List<String>? = null,
 
     /**
      * The number of dimensions the resulting output embeddings should have.

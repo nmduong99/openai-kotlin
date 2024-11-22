@@ -14,7 +14,7 @@ public data class Logprobs(
     /**
      * The tokens chosen by the completion api
      */
-    @SerialName("tokens") public val tokens: List<String>,
+    @SerialName("tokens") public val tokens: List<String>? = null,
 
     /**
      * The log probability of each token in [tokens]

@@ -3,11 +3,12 @@ package com.aallam.openai.api.run
 import com.aallam.openai.api.BetaOpenAI
 import com.aallam.openai.api.assistant.AssistantId
 import com.aallam.openai.api.assistant.AssistantTool
+import com.aallam.openai.api.core.Event
+import com.aallam.openai.api.core.LastError
 import com.aallam.openai.api.core.Status
+import com.aallam.openai.api.message.Attachment
 import com.aallam.openai.api.model.ModelId
 import com.aallam.openai.api.thread.ThreadId
-import com.aallam.openai.api.core.LastError
-import com.aallam.openai.api.core.Usage
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -95,7 +96,7 @@ public data class Run(
     /**
      * The list of File IDs the assistant used for this run.
      */
-    @SerialName("file_ids") val fileIds: List<String>? = null,
+    @SerialName("attachments") val fileIds: List<Attachment>? = null,
 
     /**
      * Set of 16 key-value pairs that can be attached to an object.
@@ -104,29 +105,5 @@ public data class Run(
      */
     @SerialName("metadata") val metadata: Map<String, String>? = null,
 
-    /**
-     * Usage statistics related to the run.
-     * This value will be null if the run is not in a terminal state (i.e. in_progress, queued, etc.).
-     */
-    @SerialName("usage") public val usage: Usage? = null,
 
-    /**
-     * The sampling temperature used for this run. If not set, defaults to 1.
-     */
-    @SerialName("temperature") val temperature: Double? = null,
-
-    /**
-     * The nucleus sampling value used for this run. If not set, defaults to 1.
-     */
-    @SerialName("top_p") val topP: Double? = null,
-
-    /**
-     * The maximum number of prompt tokens specified to have been used over the course of the run.
-     */
-    @SerialName("max_prompt_tokens") val maxPromptTokens: Int? = null,
-
-    /**
-     * The maximum number of completion tokens specified to have been used over the course of the run.
-     */
-    @SerialName("max_completion_tokens") val maxCompletionTokens: Int? = null,
-)
+    ): Event
