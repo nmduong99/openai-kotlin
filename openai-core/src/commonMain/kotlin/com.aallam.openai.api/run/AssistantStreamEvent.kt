@@ -77,8 +77,8 @@ public data class MessageDelta(
 @BetaOpenAI
 @Serializable
 public data class MessageDeltaData(
-    @SerialName("role") val role: Role,
-    @SerialName("content") val content: MessageContent
+    @SerialName("role") val role: Role?= null,
+    @SerialName("content") val content: List<MessageContent>?= null
 )
 
 /**

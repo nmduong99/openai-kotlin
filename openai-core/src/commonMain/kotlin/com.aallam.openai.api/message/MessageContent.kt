@@ -53,7 +53,7 @@ public data class TextContent(
     /**
      * Annotations for the text.
      */
-    @SerialName("annotations") val annotations: List<TextAnnotation>
+    @SerialName("annotations") val annotations: List<TextAnnotation>?= null
 )
 
 /**

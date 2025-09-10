@@ -11,5 +11,7 @@ public value class SpeechResponseFormat(public val value: String) {
         public val Opus: SpeechResponseFormat = SpeechResponseFormat("opus")
         public val Aac: SpeechResponseFormat = SpeechResponseFormat("aac")
         public val Flac: SpeechResponseFormat = SpeechResponseFormat("flac")
+        public val Pcm: SpeechResponseFormat = SpeechResponseFormat("pcm")
+        public val Wav: SpeechResponseFormat = SpeechResponseFormat("wav")
     }
 }
