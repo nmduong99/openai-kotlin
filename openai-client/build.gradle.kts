@@ -13,9 +13,9 @@ plugins {
 kotlin {
     explicitApi()
     jvm()
-//    jsNode()
-//    jsWasm()
-//    native()
+    jsNode()
+    jsWasm()
+    native()
 
     sourceSets {
         all {
@@ -42,52 +42,52 @@ kotlin {
                 implementation(libs.ktor.client.serialization.json)
             }
         }
-//        val commonTest by getting {
-//            dependencies {
-//                implementation(projects.openaiCore)
-//                implementation(kotlin("test-common"))
-//                implementation(kotlin("test-annotations-common"))
-//                implementation(libs.coroutines.test)
-//            }
-//        }
-//        val jvmMain by getting
-//        val jvmTest by getting {
-//            dependencies {
-//                implementation(kotlin("test-junit"))
-//                implementation(libs.ktor.client.okhttp)
-//                implementation(libs.logback.classic)
-//            }
-//        }
-//
-//        val jsMain by getting {
-//            dependencies {
-//            }
-//        }
-//        val jsTest by getting {
-//            dependencies {
-//                implementation(kotlin("test-js"))
-//            }
-//        }
-//        val wasmJsMain by getting {
-//            dependencies {
-//            }
-//        }
-//        val wasmJsTest by getting {
-//            dependencies {
-//                implementation(kotlin("test-wasm-js"))
-//            }
-//        }
-//        val desktopTest by getting {
-//            dependencies {
-//                implementation(libs.ktor.client.curl)
-//            }
-//        }
-//        if (HostManager.hostIsMac) {
-//            val darwinTest by getting {
-//                dependencies {
-//                    implementation(libs.ktor.client.darwin)
-//                }
-//            }
-//        }
+        val commonTest by getting {
+            dependencies {
+                implementation(projects.openaiCore)
+                implementation(kotlin("test-common"))
+                implementation(kotlin("test-annotations-common"))
+                implementation(libs.coroutines.test)
+            }
+        }
+        val jvmMain by getting
+        val jvmTest by getting {
+            dependencies {
+                implementation(kotlin("test-junit"))
+                implementation(libs.ktor.client.okhttp)
+                implementation(libs.logback.classic)
+            }
+        }
+
+        val jsMain by getting {
+            dependencies {
+            }
+        }
+        val jsTest by getting {
+            dependencies {
+                implementation(kotlin("test-js"))
+            }
+        }
+        val wasmJsMain by getting {
+            dependencies {
+            }
+        }
+        val wasmJsTest by getting {
+            dependencies {
+                implementation(kotlin("test-wasm-js"))
+            }
+        }
+        val desktopTest by getting {
+            dependencies {
+                implementation(libs.ktor.client.curl)
+            }
+        }
+        if (HostManager.hostIsMac) {
+            val darwinTest by getting {
+                dependencies {
+                    implementation(libs.ktor.client.darwin)
+                }
+            }
+        }
     }
 }
