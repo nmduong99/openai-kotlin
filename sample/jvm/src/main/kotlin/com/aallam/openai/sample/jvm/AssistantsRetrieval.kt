@@ -10,6 +10,7 @@ import com.aallam.openai.api.file.FileUpload
 import com.aallam.openai.api.file.Purpose
 import com.aallam.openai.api.message.MessageContent
 import com.aallam.openai.api.message.MessageRequest
+import com.aallam.openai.api.message.MessageRequestContent
 import com.aallam.openai.api.model.ModelId
 import com.aallam.openai.api.run.RunRequest
 import com.aallam.openai.client.OpenAI
@@ -39,7 +40,9 @@ suspend fun assistantsRetrieval(openAI: OpenAI) {
     openAI.message(
         threadId = thread.id, request = MessageRequest(
             role = Role.User,
-            content = "Can you explain the right to freedom of opinion and expression as stated in The Universal Declaration of Human Rights?"
+            content =
+                listOf(MessageRequestContent.Text("Can you explain the right to freedom of opinion and expression as stated in The Universal Declaration of Human Rights?"))
+
         )
     )
 

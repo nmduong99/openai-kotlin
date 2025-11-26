@@ -11,6 +11,7 @@ import com.aallam.openai.api.core.Role
 import com.aallam.openai.api.core.Status
 import com.aallam.openai.api.message.MessageContent
 import com.aallam.openai.api.message.MessageRequest
+import com.aallam.openai.api.message.MessageRequestContent
 import com.aallam.openai.api.model.ModelId
 import com.aallam.openai.api.run.RequiredAction
 import com.aallam.openai.api.run.Run
@@ -120,7 +121,9 @@ suspend fun assistantsFunctions(openAI: OpenAI) {
         threadId = thread.id,
         request = MessageRequest(
             role = Role.User,
-            content = "What's the current weather in San Francisco, and what is its nickname?"
+            content =
+                listOf(MessageRequestContent.Text("What's the current weather in San Francisco, and what is its nickname?"))
+
         )
     )
     val messages = openAI.messages(thread.id)
